@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('../fonts/Vollkorn-Bold.woff2') format('woff2'),
+    url('../fonts/Vollkorn-Bold.woff2') format('woff'),
+    url('../fonts/Vollkorn-Bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('../fonts/lato-bold.woff2') format('woff2'),
+    url('../fonts/lato-bold.woff2') format('woff'),
+    url('../fonts/lato-bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('../fonts/lato-italic.woff2') format('woff2'),
+    url('../fonts/lato-italic.woff2') format('woff'),
+    url('../fonts/lato-italic.ttf') format('ttf');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'lato';
+  src: url('../fonts/lato-regular.woff2') format('woff2'),
+    url('../fonts/lato-regular.woff2') format('woff'),
+    url('../fonts/lato-regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: normal;
+}
