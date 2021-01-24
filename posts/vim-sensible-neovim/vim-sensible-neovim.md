@@ -1,9 +1,8 @@
 ---
-title: vim-sensible and Neovim
+title: Neovim and vim-sensible
 slug: sensible-neovim
-date: '2020-08-25'
+date: "2021-01-24"
 tags: vim
-draft: true
 ---
 
 I was cleaning up my [Neovim config files](https://github.com/roginfarrer/dotfiles) as I periodically do, and I found a handful of "sensible defaults" that I had copied from others' dotfiles long ago. Being one to eagerly eliminate redundant code, and especially skeptical of code thats intentions are unclear to me, I started consulting the Neovim help manual. Much to my delight, I discovered I had about a dozen lines in my config that merely reaffirmed the default settings. Bye, unnecessary code!
@@ -22,18 +21,18 @@ From my perspective, the answer is **no**, vim-sensible is _mostly_ redundant. (
 
 | Rule                         | Neovim | Notes                                                           |
 | ---------------------------- | ------ | --------------------------------------------------------------- |
-| `filetype`                   | ✅     |
-| `plugin`                     | ✅     |
-| `indent`                     | ✅     |
-| `syntax`                     | ✅     |
-| `autoindent`                 | ✅     |
-| `autoread`                   | ✅     |
-| `backspace=indent,eol,start` | ✅     |
-| `incsearch`                  | ✅     |
-| `laststatus=2`               | ✅     |
-| `ttimeout`                   | ✅     |
-| `ruler`                      | ✅     |
-| `wildmenu`                   | ✅     |
+| `filetype`                   | ✅     |                                                                 |
+| `plugin`                     | ✅     |                                                                 |
+| `indent`                     | ✅     |                                                                 |
+| `syntax`                     | ✅     |                                                                 |
+| `autoindent`                 | ✅     |                                                                 |
+| `autoread`                   | ✅     |                                                                 |
+| `backspace=indent,eol,start` | ✅     |                                                                 |
+| `incsearch`                  | ✅     |                                                                 |
+| `laststatus=2`               | ✅     |                                                                 |
+| `ttimeout`                   | ✅     |                                                                 |
+| `ruler`                      | ✅     |                                                                 |
+| `wildmenu`                   | ✅     |                                                                 |
 | `encoding=utf-8`             | ✅     |                                                                 |
 | `tabpagemax=50`              | ✅     |                                                                 |
 | `t_Co=16`                    | ✅     | Neovim doesn't need this setting                                |

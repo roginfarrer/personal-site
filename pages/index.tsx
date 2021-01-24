@@ -41,6 +41,7 @@ export default function Home({
         maxWidth="58em"
         mx="auto"
         mt={3}
+        mb={5}
       >
         <Box gridArea="bio">
           <SiteHeaderBio />

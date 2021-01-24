@@ -12,9 +12,13 @@ import {
   system,
   compose,
 } from "styled-system";
-// import shouldForwardProp from "@styled-system/should-forward-prop";
+import shouldForwardProp from "@styled-system/should-forward-prop";
 
-const Box = styled("div")(
+const Box = styled("div").withConfig({
+  shouldForwardProp(prop, defaultValidatorFn) {
+    return shouldForwardProp(prop) && defaultValidatorFn(prop);
+  },
+})(
   compose(
     border,
     shadow,
@@ -29,6 +33,7 @@ const Box = styled("div")(
       transform: true,
       textDecoration: true,
       fontVariant: true,
+      clipPath: true,
     })
   )
 );

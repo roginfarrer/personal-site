@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl as style } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { hexToRgb } from "./utils";
+import gfm from "remark-gfm";
 
 const MarkdownWrapper = styled(ReactMarkdown)`
   p,
@@ -113,6 +114,7 @@ const MarkdownWrapper = styled(ReactMarkdown)`
     }
   }
 
+  table,
   pre,
   iframe,
   figure,
@@ -124,6 +126,10 @@ const MarkdownWrapper = styled(ReactMarkdown)`
     box-shadow: 0px 2px 10px 2px ${({ theme }) => theme.colors.grays[0]};
   }
 
+  iframe {
+    width: 100%;
+  }
+
   figure {
     text-align: center;
     figcaption {
@@ -132,20 +138,37 @@ const MarkdownWrapper = styled(ReactMarkdown)`
       font-size: ${({ theme }) => theme.fontSizes[0]};
     }
   }
-  
+
   pre {
     // Overriding the style tag
     padding: 1.5rem !important;
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     border-radius: 10px;
-    font-size: ${({theme}) => theme.fontSizes[0]};
+    font-size: ${({ theme }) => theme.fontSizes[0]};
+  }
+
+  tr {
+    border: 1px solid ${({ theme }) => theme.colors.grays[0]};
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  td,
+  th {
+    padding: 0.25em;
   }
 `;
 
 export default function Markdown(props) {
   return (
-    <MarkdownWrapper allowDangerousHtml renderers={{ code: CodeBlock }}>
+    <MarkdownWrapper
+      plugins={[gfm]}
+      allowDangerousHtml
+      renderers={{ code: CodeBlock }}
+    >
       {props.content}
     </MarkdownWrapper>
   );

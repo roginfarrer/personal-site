@@ -1,7 +1,7 @@
 ---
 title: DOM measurements, box-sizing, and padding with React Collapsed
 slug: dom-measurements-padding-react-collapsed
-date: '2020-04-25'
+date: "2020-04-25"
 ---
 
 One of the longest standing bugs I've encountered with [`useCollapse`](https://github.com/roginfarrer/react-collapsed) is a never-ending expanding animation when there's padding applied to the collapsed element.
@@ -35,7 +35,7 @@ const handleTransitionEnd = () => {
     } else {
       // If the heights don't match, this could be due the height of the content changing mid-transition
       // If that's the case, re-trigger the animation to animate to the new height
-      setStyles(oldStyles => ({...oldStyles, height}));
+      setStyles((oldStyles) => ({ ...oldStyles, height }));
     }
   }
 };
@@ -54,7 +54,7 @@ const handleTransitionEnd = () => {
   if (isOpen) {
     const height = el.current.scrollHeight + el.current.clientHeight;
     if (height !== styles.height) {
-      setStyles(oldStyles => ({...oldStyles, height}));
+      setStyles((oldStyles) => ({ ...oldStyles, height }));
     }
   }
 };
@@ -72,7 +72,7 @@ Later on, when I was rewriting demos for v3 of `useCollapse`, I came across a ti
 
 And then, a lightbulb went off!
 
-![Andy for parks and rec looking excited](andy.gif)
+![Andy for parks and rec looking excited](/images/andy.gif)
 
 It was `box-sizing`! I quickly added `box-sizing: border-box` to the collapse element, and poof! the bug was gone!
 
@@ -110,11 +110,11 @@ Here's `useCollapse` today with padding applied to the element:
 
 You'll notice that something still doesn't look so hot with that animation...
 
-<img src="usecollapse-padding-glitch.gif" alt="collapse jankiness" />
+<img src="/images/usecollapse-padding-glitch.gif" alt="collapse jankiness" />
 
 This is a problem that I think has no solution. When an element has a fixed height of 0, but still has padding, that padding will still be visible, even with `overflow: hidden`.
 
-<figure><img src="usecollapse-height-padding.png" alt="Collapse element still has height if padding is applied to it" />
+<figure><img src="/images/usecollapse-height-padding.png" alt="Collapse element still has height if padding is applied to it" />
 <figcaption>Padding artificially expands the element's height. `height: 0; overflow: hidden; padding: 20px`</figcaption>
 </figure>
 

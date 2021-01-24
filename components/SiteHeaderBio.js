@@ -25,7 +25,6 @@ export function SiteHeaderBio() {
           as="h1"
           fontSize={4}
           gridArea="name"
-          // pb={3}
         >
           Rogin Farrer
           <Box mt={-2} as="span" display="block" fontSize={3} color="grays.0">
@@ -39,18 +38,14 @@ export function SiteHeaderBio() {
           justifyContent="center"
         >
           <Box
-            borderRadius="50%"
-            overflow="hidden"
-            maxWidth={["150px", "100%", "100%", "200px"]}
+            width="clamp(200px, 100%, 250px)"
+            clipPath="polygon(25% 2%,101% 15%,88% 86%,32% 95%,2% 67%)"
           >
-            <Box
-              as={Image}
-              height={800}
-              width={800}
+            <Image
+              height={400}
+              width={400}
               alt="Rogin smiling"
-              src="/images/me.jpg"
-              transform="translateY(10%) scale(1.25)"
-              borderRadius="50%"
+              src="/images/avatar-cropped.jpg"
             />
           </Box>
         </Box>

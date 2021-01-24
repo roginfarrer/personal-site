@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@styled-system/should-forward-prop": "^5.1.5",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
     "react": "16.13.1",
@@ -15,6 +16,7 @@
     "react-markdown": "^5.0.3",
     "react-syntax-highlighter": "^15.4.3",
     "remark": "^12.0.0",
+    "remark-gfm": "^1.0.0",
     "remark-html": "^12.0.0",
     "styled-components": "^5.2.1",
     "styled-system": "^5.1.5"
