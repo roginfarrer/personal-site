@@ -2,7 +2,6 @@ import React from "react";
 import Box from "./Box";
 import Stack from "./Stack";
 import Link from "./Link";
-import Image from "next/image";
 
 export function SiteHeaderBio() {
   return (
@@ -38,12 +37,12 @@ export function SiteHeaderBio() {
           justifyContent="center"
         >
           <Box
+            overflow="hidden"
             width="clamp(200px, 100%, 250px)"
             clipPath="polygon(25% 2%,101% 15%,88% 86%,32% 95%,2% 67%)"
           >
-            <Image
-              height={400}
-              width={400}
+            <Box
+              as="img"
               alt="Rogin smiling"
               src="/images/avatar-cropped.jpg"
             />
