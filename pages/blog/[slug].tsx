@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Layout from "../../components/layout";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import Head from "next/head";
