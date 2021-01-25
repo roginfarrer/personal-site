@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
@@ -49,9 +48,9 @@ export default function Home({
         </Box>
         <Box gridArea="blog" maxWidth="38em">
           <Box
-            as="h2"
+            is="h2"
             fontSize={4}
-            mb={4}
+            mb="$4"
             textAlign="center"
             fontFamily="serif"
           >
@@ -61,7 +60,7 @@ export default function Home({
             {allPostsData.map(
               ({ slug, formattedDate: date, title, draft: isDraft }) => (
                 <Box
-                  as="li"
+                  is="li"
                   css={{
                     "& + &": {
                       marginTop: "3rem",
@@ -70,7 +69,7 @@ export default function Home({
                   key={slug}
                 >
                   <Box
-                    as="span"
+                    is="span"
                     display="block"
                     fontFamily="serif"
                     fontSize={2}
@@ -81,7 +80,7 @@ export default function Home({
                     </PostTitleLink>
                     {isDraft && (
                       <Box
-                        as="span"
+                        is="span"
                         ml="2"
                         p={1}
                         fontFamily="sansSerif"
@@ -94,7 +93,7 @@ export default function Home({
                       </Box>
                     )}
                   </Box>
-                  <Box as="span" display="block" fontSize={0}>
+                  <Box is="span" display="block" fontSize={0}>
                     Posted on {date}
                   </Box>
                 </Box>

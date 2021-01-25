@@ -1,9 +1,21 @@
 import React, { forwardRef } from "react";
-import Box from "./Box";
+import Box, { BoxProps } from "./Box";
 import NextLink from "next/link";
 
+interface Props extends BoxProps {
+  openInNewWindow?: boolean;
+  external?: boolean;
+  href: string;
+}
+
 export const Link = forwardRef(function Link(
-  { openInNewWindow, external, href, children, ...props },
+  {
+    openInNewWindow = false,
+    external = false,
+    href,
+    children,
+    ...props
+  }: Props,
   forwardedRef
 ) {
   const sharedProps = {
@@ -13,12 +25,12 @@ export const Link = forwardRef(function Link(
   };
 
   return external ? (
-    <Box as="a" {...sharedProps} {...props}>
+    <Box is="a" {...sharedProps} {...props}>
       {children}
     </Box>
   ) : (
     <NextLink {...sharedProps} passHref href={href}>
-      <Box as="a" {...props}>
+      <Box is="a" {...props}>
         {children}
       </Box>
     </NextLink>

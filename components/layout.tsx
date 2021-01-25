@@ -1,6 +1,4 @@
-// @ts-nocheck
 import Head from "next/head";
-import Link from "next/link";
 import { ThemeProvider } from "styled-components";
 import { theme as globalTheme } from "./theme";
 import GlobalStyles from "../components/globalStyle";
@@ -10,7 +8,6 @@ export const siteTitle = "Rogin Farrer";
 
 export default function Layout({
   children,
-  home,
 }: {
   children: React.ReactNode;
   home?: boolean;
