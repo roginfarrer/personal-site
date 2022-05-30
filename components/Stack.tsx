@@ -1,5 +1,5 @@
 import React from "react";
-import Box, { BoxProps } from "./Box";
+import Box, { BoxProps } from "./Box-system-props";
 import css from "@styled-system/css";
 
 interface Props extends BoxProps {

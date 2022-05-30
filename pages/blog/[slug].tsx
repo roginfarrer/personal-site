@@ -5,7 +5,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "../../components/Link";
 
 import styled, { keyframes, css } from "styled-components";
-import Box, { BoxProps } from "../../components/Box";
+import Box, { BoxProps } from "../../components/Box-system-props";
 import Stack from "../../components/Stack";
 import MarkdownWrapper from "../../components/MarkdownWrapper.js";
 import { Theme } from "../../components/theme";

@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { theme as globalTheme } from "./theme";
-import GlobalStyles from "../components/globalStyle";
-import Box from "./Box";
+import { Box } from "./Box";
+import { Header } from "../layout/Header";
+import { vars } from "../vars.css";
 
 export const siteTitle = "Rogin Farrer";
 
@@ -13,7 +14,7 @@ export default function Layout({
   home?: boolean;
 }) {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/images/bitmoji.ico" />
         <meta
@@ -24,17 +25,22 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <ThemeProvider theme={globalTheme}>
-        <GlobalStyles />
         <Box
-          px={[3, 3, 3, 5]}
-          bg="white"
-          transition="background-color .2s ease"
+          maxWidth="700px"
+          mx="auto"
+          height={{ _: "100px" }}
+          display="flex"
+          alignItems="center"
+          px="$5"
         >
-          <Box color="grays.2" lineHeight="1.5" m="0 auto">
-            <main>{children}</main>
+          <Box ml="-0.7rem" width="100%">
+            <Header />
           </Box>
         </Box>
+        <Box maxWidth="700px" m="0 auto" px="$5">
+          <main>{children}</main>
+        </Box>
       </ThemeProvider>
-    </div>
+    </>
   );
 }
