@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "next lint"
   },
   "dependencies": {
     "@octokit/request": "^5.6.3",
@@ -15,17 +16,19 @@
     "@styled-system/should-forward-prop": "^5.1.5",
     "@vanilla-extract/dynamic": "^2.0.2",
     "gray-matter": "^4.0.2",
-    "next": "^11",
+    "next": "^12",
     "octokit": "^1.7.1",
     "rainbow-sprinkles": "^0.12.0",
     "react": "^18",
     "react-dom": "^18",
     "react-is": "^17.0.1",
-    "react-markdown": "^5.0.3",
-    "react-syntax-highlighter": "^15.4.3",
-    "remark": "^12.0.1",
-    "remark-gfm": "^1.0.0",
-    "remark-html": "^12.0.0",
+    "react-markdown": "^8",
+    "react-query": "^3.39.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-raw": "^6.1.1",
+    "remark": "^14.0.1",
+    "remark-gfm": "^3.0.0",
+    "remark-html": "^14.0.0",
     "styled-components": "^5.2.1",
     "system-props": "^0.13.0",
     "usehooks-ts": "^2.5.3"
@@ -40,6 +43,8 @@
     "@vanilla-extract/next-plugin": "^2.0.2",
     "babel-plugin-styled-components": "^1.12.0",
     "csstype": "^3.0.6",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
     "typescript": "^4.7"
   }
 }

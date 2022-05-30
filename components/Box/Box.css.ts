@@ -87,6 +87,9 @@ const interactiveProperties = defineProperties({
     transition: true,
     transform: true,
   },
+  staticProperties: {
+    textDecoration: ["none", "underline"],
+  },
   shorthands: {
     bg: ["backgroundColor"],
   },

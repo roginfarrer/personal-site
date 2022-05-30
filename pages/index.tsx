@@ -90,7 +90,7 @@ export default function Home() {
         <BottomLink external href="https://twitter.com/roginfarrer">
           Twitter
         </BottomLink>
-        <BottomLink external href="https://linkedin.com/roginfarrer">
+        <BottomLink external href="https://www.linkedin.com/in/roginfarrer/">
           LinkedIn
         </BottomLink>
       </Box>
@@ -99,35 +99,39 @@ export default function Home() {
 }
 
 function RainbowSprinklesCard() {
-  const data = useRepoData({ owner: "wayfair", repo: "rainbow-sprinkles" });
+  const { data } = useRepoData({ owner: "wayfair", repo: "rainbow-sprinkles" });
+
   return (
     <PostCard
       href="https://github.com/wayfair/rainbow-sprinkles"
       title="Rainbow Sprinkles"
-      desc={data?.description}
-      stars={data?.stars}
+      desc={data?.data?.description}
+      stars={data?.data?.stargazers_count}
     />
   );
 }
 function CollapseCard() {
-  const data = useRepoData({ owner: "roginfarrer", repo: "react-collapsed" });
+  const { data } = useRepoData({
+    owner: "roginfarrer",
+    repo: "react-collapsed",
+  });
   return (
     <PostCard
       href="https://github.com/roginfarrer/react-collapsed"
       title="react-collapsed"
-      desc={data?.description}
-      stars={data?.stars}
+      desc={data?.data?.description}
+      stars={data?.data?.stargazers_count}
     />
   );
 }
 function SystemPropsCard() {
-  const data = useRepoData({ owner: "system-props", repo: "system-props" });
+  const { data } = useRepoData({ owner: "system-props", repo: "system-props" });
   return (
     <PostCard
       href="https://github.com/system-props/system-props"
       title="System Props"
-      desc={data?.description}
-      stars={data?.stars}
+      desc={data?.data?.description}
+      stars={data?.data?.stargazers_count}
     />
   );
 }
@@ -157,7 +161,7 @@ function PostCard({ title, href, desc, stars }) {
         )}
       </span>
       {stars && (
-        <Box as="span" display="flex" alignItems="center" gap="$2">
+        <Box as="span" display="flex" alignItems="center" gap="$2" mt="$4">
           <StarFilledIcon />
           {stars}
         </Box>

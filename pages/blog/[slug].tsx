@@ -4,24 +4,8 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "../../components/Link";
 
-import styled, { keyframes, css } from "styled-components";
-import Box, { BoxProps } from "../../components/Box-system-props";
-import Stack from "../../components/Stack";
+import { Box } from "../../components/Box";
 import MarkdownWrapper from "../../components/MarkdownWrapper.js";
-import { Theme } from "../../components/theme";
-
-const colorChange = (theme: Theme) => keyframes`
-  0% { color: #d14054; }
-  50% { color: ${theme.colors.accent}; }
-  100% { color: #d14054; }
-`;
-
-const RoginFarrer = styled(Box)<BoxProps>`
-  animation: ${({ theme }) =>
-    css`
-      ${colorChange(theme)} 1s linear infinite
-    `};
-`;
 
 export default function Post({
   postData,
@@ -37,35 +21,28 @@ export default function Post({
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <Box mx="auto" maxWidth="38em" mt={3}>
-        <RoginFarrer
-          is="h3"
-          fontSize={3}
-          fontFamily="serif"
-          color="grays.1"
-          mb={4}
-          textAlign="center"
+      <Box mx="auto" maxWidth="38em">
+        <Box
+          as="article"
+          display="flex"
+          flexDirection="column"
+          gap="$5"
+          fontSize="17px"
         >
-          <Link href="/" textDecoration="none" color="inherit">
-            Rogin Farrer
-          </Link>
-        </RoginFarrer>
-        <Stack is="article" gap={4}>
           <Box
-            is="h1"
+            as="h1"
             textAlign="center"
-            fontFamily="serif"
-            fontSize={[3, , 5]}
+            type={{ md: "$5xl" }}
+            fontWeight="bold"
           >
             {postData.title}
           </Box>
           <Box
             color="grays.1"
-            is="time"
-            fontFamily="serif"
-            fontVariant="small-caps"
+            as="time"
             textAlign="center"
             display="block"
+            mb="$9"
           >
             {postData.formattedDate}
           </Box>
@@ -75,16 +52,16 @@ export default function Post({
             href="/"
             color="white"
             textDecoration="none"
-            bg="accent"
-            borderRadius="5px"
+            bg="$blue9"
+            borderRadius="$base"
             textAlign="center"
             display="block"
-            py={2}
-            mb={5}
+            py="$3"
+            mb="$9"
           >
             <span aria-hidden="true">👈</span>&nbsp;&nbsp; Back
           </Link>
-        </Stack>
+        </Box>
       </Box>
     </Layout>
   );

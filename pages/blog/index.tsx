@@ -15,15 +15,20 @@ export default function Page({
 }) {
   return (
     <Layout>
-      <Box as="h2" type="$3xl" fontWeight="bold" mt="$8" mb="$4">
+      <Box as="h2" type="$5xl" fontWeight="bold" mt="$8" mb="$6">
         Articles
       </Box>
-      <ul>
+      <Box as="ul" display="flex" gap="$7" flexDirection="column">
         {allPostsData.map(
           ({ slug, formattedDate: date, title, draft: isDraft }) => (
             <Box as="li" key={slug}>
               <Box as="span" display="block" type="$xl" mb="$3">
-                <Box as="a" color={{ hover: "$blue11" }} href={`/blog/${slug}`}>
+                <Box
+                  fontWeight="bold"
+                  as="a"
+                  color={{ hover: "$blue11" }}
+                  href={`/blog/${slug}`}
+                >
                   {title}
                 </Box>
                 {isDraft && (
@@ -40,12 +45,12 @@ export default function Page({
                 )}
               </Box>
               <Box as="span" display="block" fontSize="$sm">
-                Posted on {date}
+                {date}
               </Box>
             </Box>
           )
         )}
-      </ul>
+      </Box>
     </Layout>
   );
 }
