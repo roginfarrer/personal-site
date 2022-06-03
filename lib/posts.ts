@@ -74,8 +74,11 @@ export async function getPostData(slug: string) {
 // Get day in format: Month day, Year. e.g. April 19, 2020
 function getFormattedDate(date: string) {
   const _date = new Date(date);
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = _date.toLocaleDateString("en-US", options);
+  const formattedDate = _date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return formattedDate;
 }
