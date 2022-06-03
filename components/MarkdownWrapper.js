@@ -8,7 +8,14 @@ import * as styles from "./MarkdownWrapper.css";
 const components = Object.fromEntries(
   Object.entries(styles).map(([element, customClass]) => {
     const Comp = element;
-    const Component = ({ className, children, node, ordered, ...props }) => (
+    const Component = ({
+      className,
+      children,
+      node,
+      ordered,
+      isHeader,
+      ...props
+    }) => (
       <Comp
         className={[customClass, className].filter(Boolean).join(" ")}
         {...props}

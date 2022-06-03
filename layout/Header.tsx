@@ -1,10 +1,8 @@
 import { Box } from "../components/Box";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
-import { darkTheme, lightTheme } from "../vars.css";
 import { useDarkMode } from "usehooks-ts";
 import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
-import { useEffect } from "react";
 
 function NavItem({ children, href }) {
   const router = useRouter();
@@ -29,10 +27,6 @@ function NavItem({ children, href }) {
 
 export function Header() {
   const { isDarkMode, toggle } = useDarkMode();
-
-  useEffect(() => {
-    document.documentElement.className = isDarkMode ? darkTheme : lightTheme;
-  }, [isDarkMode]);
 
   return (
     <Box as="nav" display="flex" gap="$4">
