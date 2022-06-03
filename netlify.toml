@@ -1,7 +1,5 @@
 [build]
-  command = "pnpm build && pnpm export"
+  command = "npx pnpm i --store=node_modules/.pnpm-store --no-frozen-lockfile && npx pnpm build && npx pnpm export"
   publish = "out"
 [build.environment]
-  NPM_FLAGS="--prefix=/dev/null"
-[[plugins]]
-  package = "/.netlify/netlify-plugin-pnpm"
+  NPM_FLAGS="--version" # prevent netlify install
