@@ -32,7 +32,7 @@ export default function Post({
           <Box
             as="h1"
             textAlign="center"
-            type={{ md: "$5xl" }}
+            type={{ _: "$3xl", md: "$5xl" }}
             fontWeight="bold"
           >
             {postData.title}
@@ -43,6 +43,7 @@ export default function Post({
             textAlign="center"
             display="block"
             mb="$9"
+            type={{ _: "$sm", md: "$base" }}
           >
             {postData.formattedDate}
           </Box>
