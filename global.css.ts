@@ -1,5 +1,5 @@
 import { globalStyle } from "@vanilla-extract/css";
-import { vars, darkTheme } from "../vars.css";
+import { vars, darkTheme } from "./vars.css";
 
 /*
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
