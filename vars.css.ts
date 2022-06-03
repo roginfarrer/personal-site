@@ -64,7 +64,10 @@ const baseTheme = {
   },
 } as const;
 
-export const [lightTheme, vars] = createTheme({
+export const lightTheme = "light";
+export const darkTheme = "dark";
+
+export const vars = createGlobalTheme(`.${lightTheme}`, {
   colors: {
     // ...gray,
     gray1: mauve.mauve1,
@@ -132,7 +135,7 @@ export const [lightTheme, vars] = createTheme({
   },
 });
 
-export const darkTheme = createTheme(vars, {
+createGlobalTheme(`.${darkTheme}`, vars, {
   ...baseTheme,
   colors: {
     // ...grayDark,
