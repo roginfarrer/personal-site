@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import { Box } from "../../components/Box";
 import { getSortedPostsData } from "../../lib/posts";
 import Layout from "../../components/layout";
+import Link from "../../components/Link";
 
 export default function Page({
   allPostsData,
@@ -23,14 +24,14 @@ export default function Page({
           ({ slug, formattedDate: date, title, draft: isDraft }) => (
             <Box as="li" key={slug}>
               <Box as="span" display="block" type="$xl" mb="$3">
-                <Box
+                <Link
                   fontWeight="bold"
                   as="a"
                   color={{ hover: "$blue11" }}
                   href={`/blog/${slug}`}
                 >
                   {title}
-                </Box>
+                </Link>
                 {isDraft && (
                   <Box
                     as="span"

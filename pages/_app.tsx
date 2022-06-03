@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { darkTheme, lightTheme } from "../vars.css";
 import { useDarkMode } from "usehooks-ts";
 import { useEffect } from "react";
-import Script from "next/script";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +17,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Script src="/theme.js" strategy="beforeInteractive" />
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>
