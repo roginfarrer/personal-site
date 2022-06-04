@@ -18,8 +18,8 @@ function NavItem({ children, href }) {
         fontWeight={isActive ? "bold" : undefined}
         bg={{ hover: "$gray4" }}
         borderRadius="$md"
-        px="$4"
-        py="$2"
+        px="$3"
+        py="$1"
         color="$gray12"
         transition={TRANSITION}
       >

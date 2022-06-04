@@ -4,6 +4,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (process.env.NODE_ENV !== "production") {
+    return res.status(200).json({
+      stars: Math.floor(Math.random() * 1000),
+      description: "some description",
+    });
+  }
+
   const {
     query: { owner, repo },
   } = req;

@@ -14,14 +14,9 @@ globalStyle(
 );
 
 /* Preferred box-sizing value */
-globalStyle(
-  `*,
-*::before,
-*::after`,
-  {
-    boxSizing: "border-box",
-  }
-);
+globalStyle("*, *::before, *::after", {
+  boxSizing: "border-box",
+});
 
 /* Reapply the pointer cursor for anchor tags */
 globalStyle("a, button", {
@@ -76,17 +71,13 @@ globalStyle(':where([draggable="true"])', {
 });
 
 globalStyle("body", {
-  // transitionDuration: ".2s",
-  // transitionProperty: "color, background-color",
-  // transitionTimingFunction: "ease-out",
   minHeight: "100vh",
 });
 
 globalStyle("html, body", {
-  lineHeight: "1.5",
+  lineHeight: vars.lineHeights.base,
   color: vars.colors.gray12,
-  fontFamily: "'IBM Plex Sans', sans-serif",
-  WebkitFontSmoothing: "antialiased",
+  fontFamily: vars.fonts.base,
   fontSize: vars.fontSize.base,
 });
 
@@ -100,7 +91,9 @@ globalStyle(`body`, {
 
 globalStyle(`.${darkTheme} body`, {
   backgroundColor: vars.colors.gray1,
+  WebkitFontSmoothing: "antialiased",
 });
+
 globalStyle(`.${darkTheme} img`, {
   filter: "brightness(0.85)",
 });
@@ -115,4 +108,5 @@ const tabbableElements = [
 
 globalStyle(tabbableElements.map((e) => `${e}:focus-visible`).join(", "), {
   outline: `2px solid ${vars.colors.blue9}`,
+  outlineOffset: "1px",
 });

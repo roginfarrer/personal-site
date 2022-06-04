@@ -31,8 +31,8 @@ export default function Post({
           <Box
             as="h1"
             textAlign="center"
-            type={{ _: "$3xl", md: "$5xl" }}
-            fontWeight="bold"
+            type={{ _: "$4xl", md: "$5xl" }}
+            fontWeight="$bolder"
           >
             {postData.title}
           </Box>
@@ -41,7 +41,7 @@ export default function Post({
             as="time"
             textAlign="center"
             display="block"
-            mb="$9"
+            mb="$5"
             type={{ _: "$sm", md: "$base" }}
           >
             {postData.formattedDate}
@@ -49,7 +49,7 @@ export default function Post({
           <MarkdownWrapper content={postData.content} />
 
           <Link
-            href="/"
+            href="/blog"
             color="white"
             textDecoration="none"
             bg="$blue9"
@@ -57,7 +57,6 @@ export default function Post({
             textAlign="center"
             display="block"
             py="$3"
-            mb="$9"
           >
             <span aria-hidden="true">👈</span>&nbsp;&nbsp; Back
           </Link>

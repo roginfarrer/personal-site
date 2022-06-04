@@ -16,7 +16,7 @@ export default function Page({
 }) {
   return (
     <Layout>
-      <Box as="h2" type="$5xl" fontWeight="bold" mt="$8" mb="$6">
+      <Box as="h2" type="$5xl" fontWeight="$bold" mb="$8">
         Articles
       </Box>
       <Box as="ul" display="flex" gap="$7" flexDirection="column">
@@ -25,7 +25,7 @@ export default function Page({
             <Box as="li" key={slug}>
               <Box as="span" display="block" type="$xl" mb="$3">
                 <Link
-                  fontWeight="bold"
+                  fontWeight="$bold"
                   as="a"
                   color={{ hover: "$blue11" }}
                   href={`/blog/${slug}`}
@@ -51,6 +51,22 @@ export default function Page({
             </Box>
           )
         )}
+      </Box>
+      <Box
+        as="button"
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        width="100%"
+        color="white"
+        textDecoration="none"
+        bg="$blue9"
+        borderRadius="$base"
+        textAlign="center"
+        display="block"
+        py="$3"
+        mt="$6"
+      >
+        <span aria-hidden="true">👆</span>&nbsp;&nbsp;Scroll to the top
       </Box>
     </Layout>
   );

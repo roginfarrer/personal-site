@@ -50,7 +50,10 @@ const responsiveProperties = defineProperties({
     marginTop: vars.space,
     marginBottom: vars.space,
     fontStyle: ["italic"],
-    fontWeight: ["bold"],
+    fontWeight: {
+      bold: "600",
+      bolder: "800",
+    },
     overflow: ["hidden"],
   },
   shorthands: {

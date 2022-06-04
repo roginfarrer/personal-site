@@ -23,7 +23,7 @@ nestedGlobalStyle(`.${mdWrapper}`, {
   },
   "h2, h3, h4": {
     fontWeight: "bold",
-    margin: "1em 0 0.5em",
+    margin: `${vars.space[8]} 0 ${vars.space[5]}`,
   },
   "p, figure, ul, ol": {
     marginBottom: "1.25em",
@@ -77,14 +77,12 @@ nestedGlobalStyle(`.${mdWrapper}`, {
       transform: "matrix(1, 1, 0, 1, -8, -17)",
     },
   },
-  "p, li": {
-    "> code.languageText": {
-      // backgroundColor: ${({ theme }) =>
-      //   `rgba(${hexToRgb(theme.colors.accent)}, 0.1)`}
-      // color: ${({ theme }) => theme.colors.accent}
-      fontFamily: '"Consolas", "Courier Prime", menlo, monospace',
-      padding: "0 0.2rem",
-    },
+  "p code": {
+    backgroundColor: vars.colors.blue3,
+    color: vars.colors.blue11,
+    fontFamily: '"Consolas", "Courier Prime", menlo, monospace',
+    fontSize: ".95rem",
+    padding: "0 0.2rem",
   },
   "table, pre, iframe, figure, img": {
     marginBottom: "1.25rem",

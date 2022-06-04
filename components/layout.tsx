@@ -46,9 +46,10 @@ export default function Layout({
         )}
       </Head>
       <Box
-        maxWidth="700px"
+        maxWidth="800px"
         mx="auto"
-        height={{ _: "100px" }}
+        mt="$5"
+        mb="$7"
         display="flex"
         alignItems="center"
         px="$5"
@@ -57,7 +58,7 @@ export default function Layout({
           <Header />
         </Box>
       </Box>
-      <Box maxWidth="700px" m="0 auto" px="$5">
+      <Box maxWidth="800px" m="0 auto" px="$5" mb="$8">
         <main>{children}</main>
       </Box>
     </>

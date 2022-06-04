@@ -14,6 +14,13 @@ export default function Markdown(props) {
       className={mdWrapper}
       components={{
         code: CodeBlock,
+        table(props) {
+          return (
+            <div style={{ overflowX: "auto" }}>
+              <table {...props} />
+            </div>
+          );
+        },
       }}
     >
       {props.content}
