@@ -5,7 +5,5 @@
   NODE_VERSION = "16"
   NPM_FLAGS="--version" # prevent npm install
 
-[[redirects]]
-  from = "/*"
-  to = "/index"
-  status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
