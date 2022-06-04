@@ -76,9 +76,10 @@ globalStyle(':where([draggable="true"])', {
 });
 
 globalStyle("body", {
-  transitionDuration: ".35s",
-  transitionProperty: "color, background-color",
-  transitionTimingFunction: "ease",
+  // transitionDuration: ".2s",
+  // transitionProperty: "color, background-color",
+  // transitionTimingFunction: "ease-out",
+  minHeight: "100vh",
 });
 
 globalStyle("html, body", {

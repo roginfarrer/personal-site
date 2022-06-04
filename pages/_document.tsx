@@ -15,6 +15,12 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap"
             rel="stylesheet"
           />
+          <meta name="robots" content="follow, index" />
+          <link rel="icon" href="/images/bitmoji.ico" />
+          <meta
+            content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+            name="robots"
+          />
         </Head>
         <body>
           <Main />

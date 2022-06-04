@@ -1,11 +1,10 @@
-import Layout from "../../components/layout";
-import { getAllPostSlugs, getPostData } from "../../lib/posts";
+import { Box } from "components/Box";
+import Layout from "components/layout";
+import Link from "components/Link";
+import MarkdownWrapper from "components/MarkdownWrapper";
+import { getAllPostSlugs, getPostData } from "lib/posts";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import { GetStaticProps, GetStaticPaths } from "next";
-import Link from "../../components/Link";
-
-import { Box } from "../../components/Box";
-import MarkdownWrapper from "../../components/MarkdownWrapper.js";
 
 export default function Post({
   postData,

@@ -1,14 +1,12 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-
-import { Box } from "../components/Box";
-import Link, { LinkProps } from "../components/Link";
-import { vars } from "../vars.css";
-import { useRepoData } from "../hooks/useRepo";
 import { StarFilledIcon } from "@radix-ui/react-icons";
+import { Box } from "components/Box";
+import Layout, { siteTitle } from "components/layout";
+import Link, { LinkProps } from "components/Link";
+import fetcher from "lib/fetcher";
+import { Github } from "lib/types";
+import Head from "next/head";
 import useSWR from "swr";
-import fetcher from "../lib/fetcher";
-import { Github } from "../lib/types";
+import { vars } from "../vars.css";
 
 export default function Home() {
   return (

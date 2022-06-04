@@ -1,41 +1,18 @@
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// @ts-expect-error
 import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import gfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import * as styles from "./MarkdownWrapper.css";
-
-const components = Object.fromEntries(
-  Object.entries(styles).map(([element, customClass]) => {
-    const Comp = element;
-    const Component = ({
-      className,
-      children,
-      node,
-      ordered,
-      isHeader,
-      ...props
-    }) => (
-      <Comp
-        className={[customClass, className].filter(Boolean).join(" ")}
-        {...props}
-      >
-        {children}
-      </Comp>
-    );
-    Component.displayName = element.toUpperCase();
-    return [element, Component];
-  })
-);
+import { mdWrapper } from "./MarkdownWrapper.css";
 
 export default function Markdown(props) {
   return (
     <ReactMarkdown
       remarkPlugins={[gfm]}
       rehypePlugins={[rehypeRaw]}
-      className="markdown-wrapper"
+      className={mdWrapper}
       components={{
-        ...components,
         code: CodeBlock,
       }}
     >

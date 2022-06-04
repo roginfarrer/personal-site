@@ -1,8 +1,8 @@
-import { Box } from "../components/Box";
-import { useRouter } from "next/router";
-import NextLink from "next/link";
-import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { Box } from "components/Box";
 import { useTheme } from "next-themes";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const TRANSITION = ".15s background-color ease";

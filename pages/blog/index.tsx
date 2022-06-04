@@ -1,8 +1,8 @@
+import { Box } from "components/Box";
+import Layout from "components/layout";
+import Link from "components/Link";
+import { getSortedPostsData } from "lib/posts";
 import { GetServerSideProps } from "next";
-import { Box } from "../../components/Box";
-import { getSortedPostsData } from "../../lib/posts";
-import Layout from "../../components/layout";
-import Link from "../../components/Link";
 
 export default function Page({
   allPostsData,
