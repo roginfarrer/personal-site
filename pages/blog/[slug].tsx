@@ -20,7 +20,7 @@ export default function Post({
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <Box mx="auto" maxWidth="38em">
+      <Box mx="auto" maxWidth="42em">
         <Box
           as="article"
           display="flex"

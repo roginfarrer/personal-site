@@ -19,11 +19,11 @@ export default function Page({
       <Box as="h2" type="$5xl" fontWeight="$bold" mb="$8">
         Articles
       </Box>
-      <Box as="ul" display="flex" gap="$7" flexDirection="column">
+      <Box as="ul" display="flex" gap="$6" flexDirection="column">
         {allPostsData.map(
           ({ slug, formattedDate: date, title, draft: isDraft }) => (
             <Box as="li" key={slug}>
-              <Box as="span" display="block" type="$xl" mb="$3">
+              <Box as="span" display="block" type="$2xl" mb="$3">
                 <Link
                   fontWeight="$bold"
                   as="a"
