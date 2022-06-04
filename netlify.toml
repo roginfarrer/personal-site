@@ -1,3 +1,6 @@
 [build]
-  command = "yarn build && yarn export"
-  publish = "out"
+  command = "npx pnpm i --store=node_modules/.pnpm-store --no-frozen-lockfile && npx next build"
+  publish = ".next"
+[build.environment]
+  NODE_VERSION = "16"
+  NPM_FLAGS="--version" # prevent npm install

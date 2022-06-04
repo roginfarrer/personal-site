@@ -1,7 +1,8 @@
 ---
 slug: book-review-the-martian-by-andy-weir
-title: 'Book Review: The Martian by Andy Weir'
-date: '2015-08-10'
+title: "Book Review: The Martian by Andy Weir"
+date: "2015-08-10"
+draft: true
 ---
 
 After 8 long years I can finally read for pleasure again.

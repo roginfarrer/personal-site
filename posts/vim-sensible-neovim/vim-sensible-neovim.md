@@ -75,3 +75,5 @@ set mouse=a
 set undodir=~/.vim_runtime/temp_dirs/undodir
 set undofile
 ```
+
+[vim-sensible]: https://github.com/tpope/vim-sensible

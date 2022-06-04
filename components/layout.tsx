@@ -1,40 +1,66 @@
 import Head from "next/head";
-import { ThemeProvider } from "styled-components";
-import { theme as globalTheme } from "./theme";
-import GlobalStyles from "../components/globalStyle";
-import Box from "./Box";
+import { useRouter } from "next/router";
+import { Header } from "layout/Header";
+import { Box } from "./Box";
 
 export const siteTitle = "Rogin Farrer";
 
 export default function Layout({
   children,
+  customMeta,
 }: {
   children: React.ReactNode;
-  home?: boolean;
+  customMeta?: any;
 }) {
+  const router = useRouter();
+
+  const meta = {
+    title: "Rogin Farrer – Developer",
+    description: `Front-end developer, JavaScript enthusiast, and design system nut.`,
+    type: "website",
+    ...customMeta,
+  };
+
   return (
-    <div>
+    <>
       <Head>
-        <link rel="icon" href="/images/bitmoji.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta name="og:title" content={siteTitle} />
+        <title>{meta.title}</title>
+        <link rel="canonical" href={`https://rogin.xyz${router.asPath}`} />
+        <meta name="twitter:card" content="summary_large_image" />;
+        <meta property="og:type" content={meta.type} />
+        <meta property="og:site_name" content="Lee Robinson" />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@roginfarrer" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        {meta.image && (
+          <>
+            <meta property="og:image" content={meta.image} />
+            <meta name="twitter:image" content={meta.image} />
+          </>
+        )}
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
       </Head>
-      <ThemeProvider theme={globalTheme}>
-        <GlobalStyles />
-        <Box
-          px={[3, 3, 3, 5]}
-          bg="white"
-          transition="background-color .2s ease"
-        >
-          <Box color="grays.2" lineHeight="1.5" m="0 auto">
-            <main>{children}</main>
-          </Box>
+      <Box
+        maxWidth="800px"
+        mx="auto"
+        mt="$5"
+        mb="$7"
+        display="flex"
+        alignItems="center"
+        px="$5"
+      >
+        <Box ml="-0.7rem" width="100%">
+          <Header />
         </Box>
-      </ThemeProvider>
-    </div>
+      </Box>
+      <Box maxWidth="800px" m="0 auto" px="$5" mb="$8">
+        <main>{children}</main>
+      </Box>
+    </>
   );
 }
