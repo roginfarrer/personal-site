@@ -3,4 +3,4 @@
   publish = ".next"
 [build.environment]
   NODE_VERSION = "16"
-  NPM_FLAGS="--version" # prevent netlify install
+  NPM_FLAGS="--version" # prevent npm install
