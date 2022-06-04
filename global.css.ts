@@ -25,12 +25,13 @@ globalStyle(
 
 /* Reapply the pointer cursor for anchor tags */
 globalStyle("a, button", {
-  cursor: "revert",
-}),
-  /* Remove list styles (bullets/numbers) */
-  globalStyle("ol, ul, menu", {
-    listStyle: "none",
-  });
+  cursor: "pointer",
+});
+
+/* Remove list styles (bullets/numbers) */
+globalStyle("ol, ul, menu", {
+  listStyle: "none",
+});
 
 /* For images to not be able to exceed their container */
 globalStyle("img", {
@@ -74,6 +75,12 @@ globalStyle(':where([draggable="true"])', {
   WebkitUserDrag: "element",
 });
 
+globalStyle("body", {
+  transitionDuration: ".35s",
+  transitionProperty: "color, background-color",
+  transitionTimingFunction: "ease",
+});
+
 globalStyle("html, body", {
   lineHeight: "1.5",
   color: vars.colors.gray12,
@@ -86,8 +93,15 @@ globalStyle("h1, h2, h3, h4, h5, h6", {
   margin: 0,
 });
 
+globalStyle(`body`, {
+  backgroundColor: "white",
+});
+
 globalStyle(`.${darkTheme} body`, {
   backgroundColor: vars.colors.gray1,
+});
+globalStyle(`.${darkTheme} img`, {
+  filter: "brightness(0.85)",
 });
 
 const tabbableElements = [

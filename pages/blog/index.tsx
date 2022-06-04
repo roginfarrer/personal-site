@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { Box } from "../../components/Box";
 import { getSortedPostsData } from "../../lib/posts";
 import Layout from "../../components/layout";
@@ -56,7 +56,7 @@ export default function Page({
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const allPostsData = getSortedPostsData();
 
   if (process.env.NODE_ENV !== "development") {

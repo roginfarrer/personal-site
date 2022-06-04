@@ -1,25 +1,14 @@
 import { AppProps } from "next/app";
 import "../global.css";
 import "../public/styles/style.css";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { darkTheme, lightTheme } from "../vars.css";
-import { useDarkMode } from "usehooks-ts";
-import { useEffect } from "react";
-
-const queryClient = new QueryClient();
+import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { isDarkMode } = useDarkMode();
-
-  useEffect(() => {
-    document.documentElement.className = isDarkMode ? darkTheme : lightTheme;
-  }, [isDarkMode]);
-
   return (
     <>
-      <QueryClientProvider client={queryClient}>
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
-      </QueryClientProvider>
+      </ThemeProvider>
     </>
   );
 }

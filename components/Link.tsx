@@ -3,12 +3,10 @@ import NextLink from "next/link";
 
 export interface LinkProps extends BoxProps<"a"> {
   openInNewWindow?: boolean;
-  external?: boolean;
 }
 
 function Link({
   openInNewWindow = false,
-  external = false,
   href,
   children,
   ...props
@@ -18,16 +16,16 @@ function Link({
     href,
   };
 
-  return external ? (
-    <Box as="a" rel="noreferrer" {...sharedProps} {...props}>
-      {children}
-    </Box>
-  ) : (
+  return href.startsWith("/") ? (
     <NextLink {...sharedProps} passHref href={href}>
       <Box as="a" {...props}>
         {children}
       </Box>
     </NextLink>
+  ) : (
+    <Box as="a" rel="noreferrer" {...sharedProps} {...props}>
+      {children}
+    </Box>
   );
 }
 

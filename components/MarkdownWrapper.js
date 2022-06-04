@@ -33,6 +33,7 @@ export default function Markdown(props) {
     <ReactMarkdown
       remarkPlugins={[gfm]}
       rehypePlugins={[rehypeRaw]}
+      className="markdown-wrapper"
       components={{
         ...components,
         code: CodeBlock,

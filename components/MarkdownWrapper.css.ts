@@ -1,5 +1,45 @@
-import { style, globalStyle } from "@vanilla-extract/css";
+import { style, globalStyle, GlobalStyleRule } from "@vanilla-extract/css";
 import { vars } from "../vars.css";
+
+interface RecursiveGlobalStyle {
+  [k: string]: GlobalStyleRule | RecursiveGlobalStyle;
+}
+
+function globalUtil(selector: string, styles: RecursiveGlobalStyle) {
+  const write = (
+    key: string,
+    value: RecursiveGlobalStyle | GlobalStyleRule
+  ) => {
+    const keys = key.split(",").map((k) => k.trim());
+    keys.forEach((k) => {
+      Object.entries(value).forEach(([nestedK, nestedV]) => {
+        if (typeof nestedV === "string" || typeof nestedV === "number") {
+          globalStyle(`${selector} ${k}`, { [nestedK]: nestedV });
+        } else {
+          write(`${k} ${nestedK}`, nestedV);
+        }
+      });
+    });
+  };
+
+  Object.entries(styles).forEach(([key, value]) => {
+    write(key, value);
+  });
+}
+
+globalUtil(".markdown-wrapper", {
+  "p, li": {
+    marginBottom: "1.5em",
+  },
+  "ul, ol": {
+    li: {
+      color: "red",
+      p: {
+        color: "blue",
+      },
+    },
+  },
+});
 
 const breakWord = style({
   wordBreak: "break-word",

@@ -6,6 +6,9 @@ import Link, { LinkProps } from "../components/Link";
 import { vars } from "../vars.css";
 import { useRepoData } from "../hooks/useRepo";
 import { StarFilledIcon } from "@radix-ui/react-icons";
+import useSWR from "swr";
+import fetcher from "../lib/fetcher";
+import { Github } from "../lib/types";
 
 export default function Home() {
   return (
@@ -70,8 +73,8 @@ export default function Home() {
           gap="$8"
           gridTemplateColumns={{ sm: "1fr 1fr 1fr" }}
         >
-          <RainbowSprinklesCard />
           <CollapseCard />
+          <RainbowSprinklesCard />
           <SystemPropsCard />
         </Box>
       </Box>
@@ -81,16 +84,12 @@ export default function Home() {
         mt="$9"
         flexDirection={{ _: "column", sm: "row" }}
       >
-        <BottomLink external href="https://github.com/roginfarrer">
-          Github
-        </BottomLink>
-        <BottomLink external href="https://github.com/roginfarrer/dotfiles">
+        <BottomLink href="https://github.com/roginfarrer">Github</BottomLink>
+        <BottomLink href="https://github.com/roginfarrer/dotfiles">
           Dotfiles
         </BottomLink>
-        <BottomLink external href="https://twitter.com/roginfarrer">
-          Twitter
-        </BottomLink>
-        <BottomLink external href="https://www.linkedin.com/in/roginfarrer/">
+        <BottomLink href="https://twitter.com/roginfarrer">Twitter</BottomLink>
+        <BottomLink href="https://www.linkedin.com/in/roginfarrer/">
           LinkedIn
         </BottomLink>
       </Box>
@@ -99,46 +98,51 @@ export default function Home() {
 }
 
 function RainbowSprinklesCard() {
-  const { data } = useRepoData({ owner: "wayfair", repo: "rainbow-sprinkles" });
+  const { data } = useSWR<Github>(
+    "/api/github?owner=wayfair&repo=rainbow-sprinkles",
+    fetcher
+  );
 
   return (
     <PostCard
       href="https://github.com/wayfair/rainbow-sprinkles"
       title="Rainbow Sprinkles"
-      desc={data?.data?.description}
-      stars={data?.data?.stargazers_count}
+      desc="Dynamic, theme-driven style props for Vanilla Extract."
+      stars={data?.stars}
     />
   );
 }
 function CollapseCard() {
-  const { data } = useRepoData({
-    owner: "roginfarrer",
-    repo: "react-collapsed",
-  });
+  const { data } = useSWR<Github>(
+    "/api/github?owner=roginfarrer&repo=react-collapsed",
+    fetcher
+  );
   return (
     <PostCard
       href="https://github.com/roginfarrer/react-collapsed"
       title="react-collapsed"
-      desc={data?.data?.description}
-      stars={data?.data?.stargazers_count}
+      desc="React custom hook for creating animated and accessible expand/collapse components"
+      stars={data?.stars}
     />
   );
 }
 function SystemPropsCard() {
-  const { data } = useRepoData({ owner: "system-props", repo: "system-props" });
+  const { data } = useSWR<Github>(
+    "/api/github?owner=roginfarrer&repo=system-props",
+    fetcher
+  );
   return (
     <PostCard
       href="https://github.com/system-props/system-props"
       title="System Props"
-      desc={data?.data?.description}
-      stars={data?.data?.stargazers_count}
+      desc="Responsive, theme-based, and typed style props for React."
+      stars={data?.stars}
     />
   );
 }
 function PostCard({ title, href, desc, stars }) {
   return (
     <Link
-      external
       href={href}
       border={`2px solid ${vars.colors.gray9}`}
       height={{ md: "250px" }}
@@ -173,7 +177,6 @@ function PostCard({ title, href, desc, stars }) {
 function BottomLink(props: LinkProps) {
   return (
     <Link
-      external
       color={{ _: "$gray11", hover: "$gray12" }}
       transition=".2s color ease"
       p="$3"
