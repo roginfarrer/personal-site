@@ -15,7 +15,7 @@ function NavItem({ children, href }) {
     <NextLink passHref href={href}>
       <Box
         as="a"
-        fontWeight={isActive ? "bold" : undefined}
+        fontWeight={isActive ? "$bold" : undefined}
         bg={{ hover: "$gray4" }}
         borderRadius="$md"
         px="$3"
