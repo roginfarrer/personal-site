@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { vars } from "vars.css";
 
 const TRANSITION = ".15s background-color ease";
 
@@ -48,7 +49,8 @@ export function Header() {
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           borderRadius="$md"
           p="$2"
-          bg={{ hover: "$gray4" }}
+          bg={{ _: "$gray4", hover: "$gray6" }}
+          border={`2px solid ${vars.colors.gray6}`}
           size="32px"
           display="flex"
           placeItems="center"

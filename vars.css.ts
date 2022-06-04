@@ -68,9 +68,10 @@ const baseTheme = {
     "2xl": "2rem",
     "3xl": "2.25rem",
     "4xl": "2.5rem",
+    "5xl": "4rem",
     "6xl": "4rem",
     "7xl": "5rem",
-    "8xl": "1",
+    "8xl": "",
     "9xl": "1",
   },
   radii: {

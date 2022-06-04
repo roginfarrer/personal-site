@@ -16,7 +16,7 @@ export default function Page({
 }) {
   return (
     <Layout>
-      <Box as="h2" type="$5xl" fontWeight="$bold" mb="$8">
+      <Box as="h2" type="$5xl" fontWeight="$bold" mb="$7" pt="$3">
         Articles
       </Box>
       <Box as="ul" display="flex" gap="$6" flexDirection="column">
