@@ -4,3 +4,8 @@
 [build.environment]
   NODE_VERSION = "16"
   NPM_FLAGS="--version" # prevent npm install
+
+[[redirects]] # https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router
+  from = "/*"
+  to = "/"
+  status = 200
