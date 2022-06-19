@@ -3,6 +3,18 @@ import Layout, { siteTitle } from "components/layout";
 import Link, { LinkProps } from "components/Link";
 import Head from "next/head";
 import { ProjectCard } from "components/ProjectCard";
+import { Chip } from "components/Chip";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import {
+  faKeyboard,
+  faCodeMerge,
+  faScroll,
+  faObjectGroup,
+  faBookOpenReader,
+  faDumbbell,
+  faPersonRunning,
+} from "@fortawesome/free-solid-svg-icons";
+import { vars } from "vars.css";
 
 export default function Home() {
   return (
@@ -12,15 +24,15 @@ export default function Home() {
       </Head>
       <Box
         display="grid"
-        gap="$2"
+        gap={`${vars.space[2]} ${vars.space[3]}`}
         gridTemplateColumns={{ sm: "1fr fr" }}
         gridTemplateRows={{ sm: "1fr 1fr" }}
         gridTemplateAreas={{
-          _: "'pic pic' 'bio bio'",
-          sm: "'bio pic' 'bio pic'",
+          _: "'pic pic' 'bio bio' 'chips chips'",
+          sm: "'bio pic' 'bio pic' 'chips chips'",
         }}
         alignItems="center"
-        mb="$8"
+        mb="$6"
       >
         <Box gridArea="bio" textAlign={{ _: "center", md: "left" }}>
           <Box
@@ -63,6 +75,29 @@ export default function Home() {
             />
           </Box>
         </Box>
+      </Box>
+      <Box gridArea="chips" display="flex" gap="$3" flexWrap="wrap" mb="$7">
+        <Chip icon={<Icon icon={faKeyboard} />} iconColor="$blue9">
+          Mechanical Keyboard Enthusiast
+        </Chip>
+        <Chip icon={<Icon icon={faBookOpenReader} />} iconColor="$green9">
+          Self Taught
+        </Chip>
+        <Chip icon={<Icon icon={faCodeMerge} />} iconColor="$orange9">
+          Open Source Maintainer
+        </Chip>
+        <Chip icon={<Icon icon={faObjectGroup} />} iconColor="$purple9">
+          Design Systems
+        </Chip>
+        <Chip icon={<Icon icon={faPersonRunning} />} iconColor="$yellow10">
+          Ultimate Frisbee
+        </Chip>
+        <Chip icon={<Icon icon={faDumbbell} />} iconColor="$gray9">
+          Weight-lifter
+        </Chip>
+        <Chip icon={<Icon icon={faScroll} />} iconColor="$red9">
+          History Nerd
+        </Chip>
       </Box>
       <Box as="section" mb="$8">
         <Box

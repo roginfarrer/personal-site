@@ -15,7 +15,7 @@ export function ProjectCard({ title, href, desc, repo }) {
   return (
     <Link
       href={href}
-      border={`2px solid ${vars.colors.gray9}`}
+      border={`2px solid ${vars.colors.gray7}`}
       height={{ _: "250px", md: "275px" }}
       p="$4"
       borderRadius="$base"

@@ -33,6 +33,7 @@ const responsiveProperties = defineProperties({
     justifyContent: true,
     alignItems: true,
     flex: true,
+    flexWrap: true,
     gridTemplateAreas: true,
     gridTemplateRows: true,
     gridTemplateColumns: true,
@@ -52,7 +53,7 @@ const responsiveProperties = defineProperties({
     fontStyle: ["italic"],
     fontWeight: {
       bold: "600",
-      bolder: "800",
+      bolder: "700",
     },
     overflow: ["hidden"],
   },

@@ -4,6 +4,9 @@ import {
   globalFontFace,
 } from "@vanilla-extract/css";
 import {
+  purple,
+  yellow,
+  orange,
   gray,
   blue,
   red,
@@ -16,6 +19,9 @@ import {
   blueDark,
   redDark,
   greenDark,
+  orangeDark,
+  yellowDark,
+  purpleDark,
 } from "@radix-ui/colors";
 
 globalFontFace("IBM Plex Sans", {
@@ -105,9 +111,12 @@ export const vars = createGlobalTheme(`.${lightTheme}`, {
     gray10: mauve.mauve10,
     gray11: mauve.mauve11,
     gray12: mauve.mauve12,
+    ...orange,
+    ...yellow,
     ...blue,
     ...red,
     ...green,
+    ...purple,
   },
 });
 
@@ -130,5 +139,8 @@ createGlobalTheme(`.${darkTheme}`, vars, {
     ...blueDark,
     ...redDark,
     ...greenDark,
+    ...orangeDark,
+    ...yellowDark,
+    ...purpleDark,
   },
 });

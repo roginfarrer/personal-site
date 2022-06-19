@@ -16,7 +16,7 @@ function NavItem({ children, href }) {
     <NextLink passHref href={href}>
       <Box
         as="a"
-        fontWeight={isActive ? "$bold" : undefined}
+        fontWeight={isActive ? "$bolder" : undefined}
         bg={{ hover: "$gray4" }}
         borderRadius="$md"
         px="$3"
@@ -48,7 +48,7 @@ export function Header() {
           as="button"
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           borderRadius="$md"
-          p="$2"
+          p="$1"
           bg={{ _: "$gray4", hover: "$gray6" }}
           border={`2px solid ${vars.colors.gray6}`}
           size="32px"
