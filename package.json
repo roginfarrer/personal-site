@@ -35,7 +35,7 @@
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.36.0",
     "@types/jest": "^28.1.8",
-    "@types/node": "^13.13.52",
+    "@types/node": "^18",
     "@types/react": "^16.14.40",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@vanilla-extract/css": "^1.2.0",
