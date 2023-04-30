@@ -1,21 +1,13 @@
-import {
-  createGlobalTheme,
-  createTheme,
-  globalFontFace,
-} from "@vanilla-extract/css";
+import { createGlobalTheme } from "@vanilla-extract/css";
 import {
   purple,
   yellow,
   orange,
-  gray,
   blue,
   red,
   green,
-  sage,
   mauve,
   mauveDark,
-  sageDark,
-  grayDark,
   blueDark,
   redDark,
   greenDark,
@@ -23,20 +15,6 @@ import {
   yellowDark,
   purpleDark,
 } from "@radix-ui/colors";
-
-globalFontFace("IBM Plex Sans", {
-  src: "url(/fonts/IBMPlexSansVar-Roman.woff2)",
-  fontStyle: "normal",
-  fontWeight: "100 900",
-  fontDisplay: "optional",
-});
-
-globalFontFace("IBM Plex Sans", {
-  src: "url(/fonts/IBMPlexSansVar-Italic.woff2)",
-  fontStyle: "italic",
-  fontWeight: "100 900",
-  fontDisplay: "optional",
-});
 
 const baseTheme = {
   space: {
@@ -88,7 +66,7 @@ const baseTheme = {
     xl: "0.75rem",
   },
   fonts: {
-    base: "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif",
+    base: "'Open Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif",
   },
 } as const;
 

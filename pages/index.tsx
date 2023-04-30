@@ -4,7 +4,6 @@ import Link, { LinkProps } from "components/Link";
 import Head from "next/head";
 import { ProjectCard } from "components/ProjectCard";
 import { Chip } from "components/Chip";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import {
   faKeyboard,
   faCodeMerge,
@@ -15,6 +14,8 @@ import {
   faPersonRunning,
 } from "@fortawesome/free-solid-svg-icons";
 import { vars } from "vars.css";
+import Image from "next/image";
+import propic from "../public/images/avatar-cropped.jpg";
 
 export default function Home() {
   return (
@@ -69,33 +70,35 @@ export default function Home() {
             clipPath="polygon(25% 2%,101% 15%,88% 86%,32% 95%,2% 67%)"
           >
             <Box
-              as="img"
+              priority
+              as={Image}
               alt="Rogin drinking coffee"
-              src="/images/avatar-cropped.jpg"
+              src={propic}
+              size="auto"
             />
           </Box>
         </Box>
       </Box>
       <Box gridArea="chips" display="flex" gap="$3" flexWrap="wrap" mb="$7">
-        <Chip icon={<Icon icon={faKeyboard} />} iconColor="$blue9">
+        <Chip icon={faKeyboard} iconColor="$blue9">
           Mechanical Keyboard Enthusiast
         </Chip>
-        <Chip icon={<Icon icon={faBookOpenReader} />} iconColor="$green9">
+        <Chip icon={faBookOpenReader} iconColor="$green9">
           Self Taught
         </Chip>
-        <Chip icon={<Icon icon={faCodeMerge} />} iconColor="$orange9">
+        <Chip icon={faCodeMerge} iconColor="$orange9">
           Open Source Maintainer
         </Chip>
-        <Chip icon={<Icon icon={faObjectGroup} />} iconColor="$purple9">
+        <Chip icon={faObjectGroup} iconColor="$purple9">
           Design Systems
         </Chip>
-        <Chip icon={<Icon icon={faPersonRunning} />} iconColor="$yellow10">
+        <Chip icon={faPersonRunning} iconColor="$yellow10">
           Ultimate Frisbee
         </Chip>
-        <Chip icon={<Icon icon={faDumbbell} />} iconColor="$gray9">
+        <Chip icon={faDumbbell} iconColor="$gray9">
           Weight-lifter
         </Chip>
-        <Chip icon={<Icon icon={faScroll} />} iconColor="$red9">
+        <Chip icon={faScroll} iconColor="$red9">
           History Nerd
         </Chip>
       </Box>
@@ -142,7 +145,7 @@ export default function Home() {
         <BottomLink href="https://github.com/roginfarrer/dotfiles">
           Dotfiles
         </BottomLink>
-        <BottomLink href="https://twitter.com/roginfarrer">Twitter</BottomLink>
+        <BottomLink href="https://hachyderm.io/@rogin">Mastodon</BottomLink>
         <BottomLink href="https://www.linkedin.com/in/roginfarrer/">
           LinkedIn
         </BottomLink>

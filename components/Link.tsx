@@ -17,11 +17,9 @@ function Link({
   };
 
   return href.startsWith("/") ? (
-    <NextLink {...sharedProps} passHref href={href}>
-      <Box as="a" {...props}>
-        {children}
-      </Box>
-    </NextLink>
+    <Box as={NextLink} {...sharedProps} {...props} href={href}>
+      {children}
+    </Box>
   ) : (
     <Box as="a" rel="noreferrer" {...sharedProps} {...props}>
       {children}

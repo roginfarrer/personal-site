@@ -1,9 +1,10 @@
-import { ElementType } from "react";
 import { vars } from "vars.css";
 import { Box, BoxProps } from "./Box";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { ComponentProps } from "react";
 
 export interface ChipProps {
-  icon: JSX.Element;
+  icon: ComponentProps<typeof Icon>["icon"];
   children: string;
   iconColor?: BoxProps<any>["color"];
 }
@@ -20,15 +21,7 @@ export function Chip({ icon, children, iconColor }: ChipProps) {
       px="$2"
       type="$sm"
     >
-      <Box
-        as="span"
-        color={iconColor}
-        size="15px"
-        display="flex"
-        alignItems="center"
-      >
-        {icon}
-      </Box>
+      <Box as={Icon} icon={icon} color={iconColor} size="15px" />
       {children}
     </Box>
   );

@@ -13,20 +13,19 @@ function NavItem({ children, href }) {
   const isActive = router.asPath === href;
 
   return (
-    <NextLink passHref href={href}>
-      <Box
-        as="a"
-        fontWeight={isActive ? "$bolder" : undefined}
-        bg={{ hover: "$gray4" }}
-        borderRadius="$md"
-        px="$3"
-        py="$1"
-        color="$gray12"
-        transition={TRANSITION}
-      >
-        {children}
-      </Box>
-    </NextLink>
+    <Box
+      as={NextLink}
+      href={href}
+      fontWeight={isActive ? "$bolder" : undefined}
+      bg={{ hover: "$gray4" }}
+      borderRadius="$md"
+      px="$3"
+      py="$1"
+      color="$gray12"
+      transition={TRANSITION}
+    >
+      {children}
+    </Box>
   );
 }
 
